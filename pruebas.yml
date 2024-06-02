@@ -1,0 +1,20 @@
+name: Pruebas
+
+on:
+  push:
+    branches:
+      - dev
+
+jobs:
+  pruebas:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout del repositorio
+      uses: actions/checkout@v2
+      
+    - name: Instalar dependencias
+      run: npm install
+      
+    - name: Ejecutar pruebas
+      run: npm test
